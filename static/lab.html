@@ -1,0 +1,10 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RH WebView 本地自检</title><link rel="stylesheet" href="/static/app.css"><link rel="stylesheet" href="/static/ps-webview.css">
+<script>try {document.documentElement.dataset.theme=localStorage.getItem('rh-workflow-theme')||'light';} catch (_) {}</script>
+<script src="/static/motion.js"></script><script src="/static/ps-webview.js"></script>
+</head><body class="ps-lab"><div class="app-shell">
+<header class="topbar"><a class="brand-lockup" href="/?workspace=submit"><img class="brand-mark" src="/static/assets/rh-workflow-desk-icon.png" alt=""><span><span class="brand-name">RH Workflow PS</span><span class="brand-subtitle">本地验证</span></span></a><div class="topbar-actions"><a class="settings-button" href="/?workspace=submit">返回提交台</a></div></header>
+<section class="intro-block"><div class="eyebrow">WEBVIEW / NATIVE BRIDGE</div><h1>验证界面与 Photoshop。</h1><p>在一个临时测试文档中完成像素写入、PNG 捕获、服务读取和回贴校验。结束后关闭测试文档。</p></section>
+<section class="panel"><div class="panel-heading"><h2>本地桥接自检</h2><span id="labStatus" class="credential-status">尚未运行</span></div><div class="ps-lab-actions"><button id="runSelfTest" class="primary-button">运行本地自检</button><a class="secondary-button button-compact" href="/workflows">查看工作流界面</a></div><pre id="labResults" class="ps-lab-results">等待运行。</pre></section>
+</div><script src="/static/lab.js"></script></body></html>

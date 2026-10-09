@@ -1,0 +1,1140 @@
+{
+  "native_self_test": {
+    "at": "2026-10-08T19:30:27.649Z",
+    "native": true,
+    "viewport": {
+      "width": 1308,
+      "height": 1064
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Adobe UXP WebView",
+    "css": {
+      "grid": true,
+      "colorMix": true,
+      "clamp": true
+    },
+    "photoshop": "27.11.0",
+    "uxp": "uxp-9.4.1-0",
+    "pixelTest": {
+      "status": "passed",
+      "width": 64,
+      "height": 32,
+      "bytes": 8192,
+      "firstPixel": [
+        40,
+        160,
+        140,
+        255
+      ],
+      "capturePath": "data/photoshop/captures/ps_0088c84657d3414a/input-000.png",
+      "steps": [
+        "WebView RPC",
+        "Photoshop Imaging putPixels",
+        "Photoshop getPixels",
+        "PNG capture persisted",
+        "HTTP RGBA read",
+        "RGBA placed and read back"
+      ]
+    },
+    "status": "passed"
+  },
+  "browser_checks": [
+    {
+      "width": 320,
+      "pages": [
+        "submit",
+        "workflows",
+        "outputs",
+        "dashboard",
+        "settings"
+      ],
+      "horizontal_overflow": false
+    },
+    {
+      "width": 460,
+      "pages": [
+        "submit",
+        "settings"
+      ],
+      "horizontal_overflow": false
+    },
+    {
+      "width": 900,
+      "pages": [
+        "submit"
+      ],
+      "horizontal_overflow": false
+    }
+  ],
+  "interaction_checks": [
+    "Codex workspace tab selected at 900px",
+    "Telegram inbound settings hidden",
+    "main navigation excludes prompt workshop and focus"
+  ],
+  "python_tests": {
+    "passed": 12
+  },
+  "native_bridge_tests": {
+    "passed": 2
+  },
+  "javascript_syntax": "passed",
+  "canonical_css_sha256": "26328a0f7d03827f56bbdf27c3098843d772b6085fa8ee307ea3eef1d7e8cd33",
+  "browser_screenshot": "artifacts/browser-460.png",
+  "photoshop_panel_screenshot": "not_captured",
+  "cloud_generation_tested": false,
+  "limitations": [
+    "Electron account login not migrated",
+    "model runtimes not bundled",
+    "manual output placement",
+    "input bindings not persisted"
+  ],
+  "baseline_note": "顶层旧记录是 WebView 桥接基线；本轮图片工作流验收见 image_workflow_2026_10_09。",
+  "image_workflow_2026_10_09": {
+    "at": "2026-10-09T09:26:22.415488+00:00",
+    "python_tests_passed": 30,
+    "native_bridge_tests_passed": 5,
+    "javascript_syntax": "passed",
+    "sync_hooks_reproduced": true,
+    "canonical_css_unchanged": true,
+    "browser_widths": [
+      320,
+      460,
+      900
+    ],
+    "horizontal_overflow": false,
+    "select_height_px": 40,
+    "browser_host": "mocked",
+    "native_run": {
+      "at": "2026-10-09T09:16:55.637Z",
+      "native": true,
+      "viewport": {
+        "width": 900,
+        "height": 880
+      },
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Adobe UXP WebView",
+      "css": {
+        "grid": true,
+        "colorMix": true,
+        "clamp": true
+      },
+      "photoshop": "27.11.0",
+      "uxp": "uxp-9.4.1-0",
+      "pixelTest": {
+        "status": "passed",
+        "steps": [
+          "33x19 图层按自身边界导出、PNG/HTTP RGBA 像素往返",
+          "零输入原尺寸居中 (118,84) 64x32",
+          "重复完成通知只创建一份图层",
+          "无选区保持 66x38，定位到输入 (13,17)",
+          "活动图层选区图像、LoadImageMask、零输入选区使用同一快照",
+          "128x64 拉伸至原 64x32，恢复 0/80/180/255 灰度，矩形外黑色",
+          "手动请求幂等，新点击可再次创建图层，自动记录保留",
+          "377x611 灰度蒙版逐像素往返；当前选区改变后仍恢复原坐标，矩形外黑色"
+        ],
+        "bytes": 2508,
+        "width": 300,
+        "height": 200,
+        "firstPixel": [
+          40,
+          160,
+          140,
+          255
+        ]
+      },
+      "status": "passed"
+    },
+    "native_fix": "getLayerMask inside executeAsModal; all 8 steps passed",
+    "native_final_status": "passed",
+    "physical_canvas_drag": {
+      "status": "observed",
+      "successful_import_records": 5,
+      "representative_positions": [
+        {
+          "left": 258,
+          "top": 223,
+          "width": 377,
+          "height": 611
+        },
+        {
+          "left": 278,
+          "top": 120,
+          "width": 176,
+          "height": 160
+        }
+      ],
+      "has_native_layer_mask": true,
+      "existing_masks_edited_by_user": true,
+      "pixel_correctness": "verified by unedited synthetic samples"
+    },
+    "photoshop_panel_visual": {
+      "status": "observed",
+      "webview_viewport": {
+        "width": 900,
+        "height": 880
+      },
+      "window_screenshot_size": {
+        "width": 912,
+        "height": 941
+      },
+      "observed": [
+        "ordinary image defaults without source selector",
+        "dedicated selection mask card and grayscale preview",
+        "outputs page and native drag test page"
+      ],
+      "native_narrow_panel_and_dialog_checks": "pending; browser checks passed"
+    },
+    "cloud_generation_tested": false,
+    "details": "docs/photoshop-image-workflow-verification.md",
+    "native_drag_fixture": {
+      "status": "prepared_and_cleaned",
+      "physical_drag": "coordinate automation returned windowNotFoundAtPosition; successful user drags observed separately"
+    }
+  },
+  "input_layout_2026_10_09": {
+    "at": "2026-10-09T09:44:16.011677+00:00",
+    "javascript_syntax": "passed",
+    "python_tests_passed": 30,
+    "browser_host": "mocked",
+    "browser_widths": [
+      320,
+      460,
+      900
+    ],
+    "controls": "left",
+    "preview": "right",
+    "column_tops_aligned": true,
+    "horizontal_overflow": false,
+    "image_and_mask_cards_checked": true,
+    "local_image_toggle_checked": true,
+    "select_height_px": 40,
+    "browser_errors": [],
+    "screenshots": [
+      "artifacts/input-side-by-side-320.png",
+      "artifacts/input-side-by-side-460.png",
+      "artifacts/input-side-by-side-900.png"
+    ],
+    "photoshop_panel_visual": {
+      "photoshop": "27.11.0",
+      "plugin_reload": "successful",
+      "status": "partially_observed",
+      "viewport": null,
+      "reason": "Follow-up native observation confirms the mask layout; exact WebView viewport and ordinary preview were not captured.",
+      "observed": [
+        "Photoshop floating submit panel: controls left and mask preview right",
+        "ordinary image controls in left column; no ordinary preview was visible"
+      ]
+    },
+    "cloud_generation_tested": false,
+    "details": "docs/photoshop-image-workflow-verification.md"
+  },
+  "output_delete_2026_10_09": {
+    "at": "2026-10-09T10:14:44.771944+00:00",
+    "javascript_syntax": "passed",
+    "python_tests_passed": 30,
+    "sync_hooks_reproduced": [
+      "outputs.js",
+      "motion.js"
+    ],
+    "canonical_css_unchanged": true,
+    "confirmation": "await RHHost.confirm HTML modal",
+    "native_confirm_calls_in_outputs": 0,
+    "right_click_button_recovers_after_success_and_failure": true,
+    "successive_modal_focus_preserved": true,
+    "browser_host": "mocked",
+    "browser_api": "all API calls intercepted; no production deletion",
+    "browser_report": "artifacts/output-delete-browser-report.json",
+    "browser_scenarios": [
+      "单张取消",
+      "双击确认仅一次请求",
+      "同任务全部产物移除",
+      "连续右键删除",
+      "请求失败保留卡片和恢复按钮",
+      "失败后重试",
+      "批量取消与确认",
+      "一星删除取消与确认"
+    ],
+    "browser_widths": [
+      {
+        "width": 320,
+        "panel": {
+          "left": 24,
+          "right": 296,
+          "top": 339,
+          "bottom": 561
+        },
+        "overflow": false,
+        "cancelFocused": true,
+        "visibleOpacity": "1"
+      },
+      {
+        "width": 460,
+        "panel": {
+          "left": 24,
+          "right": 436,
+          "top": 361,
+          "bottom": 539
+        },
+        "overflow": false,
+        "cancelFocused": true,
+        "visibleOpacity": "1"
+      },
+      {
+        "width": 900,
+        "panel": {
+          "left": 170,
+          "right": 730,
+          "top": 355,
+          "bottom": 545
+        },
+        "overflow": false,
+        "cancelFocused": true,
+        "visibleOpacity": "1"
+      }
+    ],
+    "browser_errors": [],
+    "screenshots": [
+      "artifacts/output-delete-confirm-320.png",
+      "artifacts/output-delete-confirm-460.png",
+      "artifacts/output-delete-confirm-900.png"
+    ],
+    "photoshop_panel_visual": {
+      "photoshop": "27.11.0",
+      "status": "pending",
+      "viewport": null,
+      "reason": "Native navigation was rejected because the user changed the app state; subsequent read-only observations showed the main document and a native alert."
+    },
+    "native_pixel_test": "not rerun for frontend-only change; previous 8-step baseline retained",
+    "cloud_generation_tested": false,
+    "details": "docs/photoshop-image-workflow-verification.md"
+  },
+  "transparent_import_2026_10_09": {
+    "javascript_syntax": "passed",
+    "native_bridge_tests_passed": 7,
+    "python_tests_passed": 30,
+    "root_cause": "Photoshop 27.11.0 drops alpha when putPixels converts Uint8 RGBA to 16/32-bit RGB documents",
+    "fix": "RGBA matches target depth; 16-bit reduced range and 32-bit linear-light RGB with linear alpha",
+    "native_run": {
+      "at": "2026-10-09T10:46:48.266Z",
+      "native": true,
+      "viewport": {
+        "width": 1576,
+        "height": 1175
+      },
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Adobe UXP WebView",
+      "css": {
+        "grid": true,
+        "colorMix": true,
+        "clamp": true
+      },
+      "photoshop": "27.11.0",
+      "uxp": "uxp-9.4.1-0",
+      "pixelTest": {
+        "status": "passed",
+        "steps": [
+          "33x19 图层按自身边界导出、PNG/HTTP RGBA 像素往返",
+          "零输入原尺寸居中 (118,84) 64x32",
+          "重复完成通知只创建一份图层",
+          "无选区保持 66x38，定位到输入 (13,17)",
+          "活动图层选区图像、LoadImageMask、零输入选区使用同一快照",
+          "128x64 拉伸至原 64x32，恢复 0/80/180/255 灰度，矩形外黑色",
+          "手动请求幂等，新点击可再次创建图层，自动记录保留",
+          "377x611 灰度蒙版逐像素往返；当前选区改变后仍恢复原坐标，矩形外黑色",
+          "8位 RGBA：透明度差异 0，颜色差异 0",
+          "16位 RGBA：透明度差异 0，颜色差异 0",
+          "32位 RGBA：透明度差异 0，颜色差异 0"
+        ],
+        "transparency": {
+          "status": "passed",
+          "task_id": null,
+          "output_id": null,
+          "placement": {
+            "left": 3,
+            "top": 2,
+            "width": 32,
+            "height": 8
+          },
+          "cases": [
+            {
+              "depth": 8,
+              "document_bits": "bitDepth8",
+              "color_profile": "sRGB IEC61966-2.1",
+              "alpha_mismatches": 0,
+              "rgb_mismatches": 0,
+              "max_alpha_difference": 0,
+              "max_color_difference": 0,
+              "samples": 256,
+              "read_components": 4,
+              "read_has_alpha": true,
+              "source_bounds": {
+                "left": 4,
+                "top": 2,
+                "right": 35,
+                "bottom": 10
+              },
+              "examples": []
+            },
+            {
+              "depth": 16,
+              "document_bits": "bitDepth16",
+              "color_profile": "sRGB IEC61966-2.1",
+              "alpha_mismatches": 0,
+              "rgb_mismatches": 0,
+              "max_alpha_difference": 0,
+              "max_color_difference": 0,
+              "samples": 256,
+              "read_components": 4,
+              "read_has_alpha": true,
+              "source_bounds": {
+                "left": 4,
+                "top": 2,
+                "right": 35,
+                "bottom": 10
+              },
+              "examples": []
+            },
+            {
+              "depth": 32,
+              "document_bits": "bitDepth32",
+              "color_profile": "sRGB IEC61966-2.1 (线性 RGB 配置文件)",
+              "alpha_mismatches": 0,
+              "rgb_mismatches": 0,
+              "max_alpha_difference": 0,
+              "max_color_difference": 0,
+              "samples": 256,
+              "read_components": 4,
+              "read_has_alpha": true,
+              "source_bounds": {
+                "left": 4,
+                "top": 2,
+                "right": 35,
+                "bottom": 10
+              },
+              "examples": []
+            }
+          ],
+          "steps": [
+            "8位 RGBA：透明度差异 0，颜色差异 0",
+            "16位 RGBA：透明度差异 0，颜色差异 0",
+            "32位 RGBA：透明度差异 0，颜色差异 0"
+          ]
+        },
+        "bytes": 2508,
+        "width": 300,
+        "height": 200,
+        "firstPixel": [
+          40,
+          160,
+          140,
+          255
+        ]
+      },
+      "status": "passed"
+    },
+    "reference_task": {
+      "at": "2026-10-09T10:40:05.866Z",
+      "native": true,
+      "viewport": {
+        "width": 1576,
+        "height": 1175
+      },
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Adobe UXP WebView",
+      "css": {
+        "grid": true,
+        "colorMix": true,
+        "clamp": true
+      },
+      "photoshop": "27.11.0",
+      "uxp": "uxp-9.4.1-0",
+      "pixelTest": {
+        "status": "passed",
+        "task_id": "task_814dda832597",
+        "output_id": "output_42d57abc76464d52a4e0d870",
+        "placement": {
+          "left": 1920,
+          "top": 848,
+          "width": 768,
+          "height": 1376
+        },
+        "cases": [
+          {
+            "depth": 8,
+            "document_bits": "bitDepth8",
+            "alpha_mismatches": 0,
+            "rgb_mismatches": 0,
+            "max_alpha_difference": 0,
+            "max_color_difference": 0,
+            "samples": 1056768,
+            "read_components": 4,
+            "read_has_alpha": true,
+            "source_bounds": {
+              "left": 1920,
+              "top": 848,
+              "right": 2688,
+              "bottom": 2224
+            },
+            "examples": []
+          },
+          {
+            "depth": 16,
+            "document_bits": "bitDepth16",
+            "alpha_mismatches": 0,
+            "rgb_mismatches": 0,
+            "max_alpha_difference": 0,
+            "max_color_difference": 0,
+            "samples": 1056768,
+            "read_components": 4,
+            "read_has_alpha": true,
+            "source_bounds": {
+              "left": 1920,
+              "top": 848,
+              "right": 2688,
+              "bottom": 2224
+            },
+            "examples": []
+          },
+          {
+            "depth": 32,
+            "document_bits": "bitDepth32",
+            "alpha_mismatches": 0,
+            "rgb_mismatches": 0,
+            "max_alpha_difference": 0,
+            "max_color_difference": 0,
+            "samples": 1056768,
+            "read_components": 4,
+            "read_has_alpha": true,
+            "source_bounds": {
+              "left": 1920,
+              "top": 848,
+              "right": 2688,
+              "bottom": 2224
+            },
+            "examples": []
+          }
+        ],
+        "steps": [
+          "8位 RGBA：透明度差异 0，颜色差异 0",
+          "16位 RGBA：透明度差异 0，颜色差异 0",
+          "32位 RGBA：透明度差异 0，颜色差异 0"
+        ]
+      },
+      "status": "passed"
+    },
+    "reference_target_profile": {
+      "at": "2026-10-09T10:44:39.566Z",
+      "native": true,
+      "viewport": {
+        "width": 1576,
+        "height": 1175
+      },
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Adobe UXP WebView",
+      "css": {
+        "grid": true,
+        "colorMix": true,
+        "clamp": true
+      },
+      "photoshop": "27.11.0",
+      "uxp": "uxp-9.4.1-0",
+      "pixelTest": {
+        "status": "passed",
+        "task_id": "task_814dda832597",
+        "output_id": "output_42d57abc76464d52a4e0d870",
+        "placement": {
+          "left": 1920,
+          "top": 848,
+          "width": 768,
+          "height": 1376
+        },
+        "cases": [
+          {
+            "depth": 16,
+            "document_bits": "bitDepth16",
+            "color_profile": "Display P3",
+            "alpha_mismatches": 0,
+            "rgb_mismatches": 0,
+            "max_alpha_difference": 0,
+            "max_color_difference": 0,
+            "samples": 1056768,
+            "read_components": 4,
+            "read_has_alpha": true,
+            "source_bounds": {
+              "left": 1920,
+              "top": 848,
+              "right": 2688,
+              "bottom": 2224
+            },
+            "examples": []
+          }
+        ],
+        "steps": [
+          "16位 RGBA：透明度差异 0，颜色差异 0"
+        ]
+      },
+      "status": "passed"
+    },
+    "source_png_sha256": "61f9de3d5487641b27e9fe3149c4926e250725204759d825e9452a1767d8f777",
+    "original_png_and_http_rgba_identical": true,
+    "browser_lab_widths": [
+      320,
+      460,
+      900
+    ],
+    "browser_overflow": false,
+    "browser_page_errors": [],
+    "user_document_changes": false,
+    "existing_layers_modified": false,
+    "cloud_generation_tested": false,
+    "details": "docs/photoshop-image-workflow-verification.md"
+  },
+  "capture_preview_2026_10_09": {
+    "javascript_syntax": "passed",
+    "native_bridge_tests_passed": 8,
+    "python_tests_passed": 30,
+    "root_cause": "getPixels forced 8-bit conversion on a native 16-bit Display P3 document raises Photoshop -32005",
+    "fix": "Read document native component depth, then normalize to 8-bit sRGB RGBA before PNG encoding",
+    "current_document_capture": {
+      "status": "passed",
+      "at": "2026-10-09T10:55:35.138Z",
+      "document": "DSC09782.psd",
+      "document_id": "1034",
+      "capture_id": "ps_5c5ef02f7639427c",
+      "layer_id": "3",
+      "mode": "selection_image",
+      "rect": {
+        "left": 4132,
+        "top": 1435,
+        "right": 4608,
+        "bottom": 2130
+      },
+      "width": 476,
+      "height": 695,
+      "bytes": 1323280
+    },
+    "png_depths": {
+      "status": "passed",
+      "at": "2026-10-09T10:56:41.847Z",
+      "cases": [
+        {
+          "depth": 8,
+          "color_profile": "sRGB IEC61966-2.1",
+          "status": "passed",
+          "full_mode": "layer_full",
+          "selected_modes": [
+            "selection_image",
+            "selection_mask"
+          ],
+          "width": 64,
+          "height": 32,
+          "image_samples": 2048,
+          "mask_samples": 2048,
+          "position": {
+            "left": 30,
+            "top": 40,
+            "right": 94,
+            "bottom": 72
+          }
+        },
+        {
+          "depth": 16,
+          "color_profile": "Display P3",
+          "status": "passed",
+          "full_mode": "layer_full",
+          "selected_modes": [
+            "selection_image",
+            "selection_mask"
+          ],
+          "width": 64,
+          "height": 32,
+          "image_samples": 2048,
+          "mask_samples": 2048,
+          "position": {
+            "left": 30,
+            "top": 40,
+            "right": 94,
+            "bottom": 72
+          }
+        },
+        {
+          "depth": 32,
+          "color_profile": "sRGB IEC61966-2.1 (线性 RGB 配置文件)",
+          "status": "passed",
+          "full_mode": "layer_full",
+          "selected_modes": [
+            "selection_image",
+            "selection_mask"
+          ],
+          "width": 64,
+          "height": 32,
+          "image_samples": 2048,
+          "mask_samples": 2048,
+          "position": {
+            "left": 30,
+            "top": 40,
+            "right": 94,
+            "bottom": 72
+          }
+        }
+      ]
+    },
+    "native_run": {
+      "at": "2026-10-09T10:57:20.801Z",
+      "native": true,
+      "viewport": {
+        "width": 1576,
+        "height": 1175
+      },
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Adobe UXP WebView",
+      "css": {
+        "grid": true,
+        "colorMix": true,
+        "clamp": true
+      },
+      "photoshop": "27.11.0",
+      "uxp": "uxp-9.4.1-0",
+      "pixelTest": {
+        "status": "passed",
+        "steps": [
+          "33x19 图层按自身边界导出、PNG/HTTP RGBA 像素往返",
+          "零输入原尺寸居中 (118,84) 64x32",
+          "重复完成通知只创建一份图层",
+          "无选区保持 66x38，定位到输入 (13,17)",
+          "活动图层选区图像、LoadImageMask、零输入选区使用同一快照",
+          "128x64 拉伸至原 64x32，恢复 0/80/180/255 灰度，矩形外黑色",
+          "手动请求幂等，新点击可再次创建图层，自动记录保留",
+          "377x611 灰度蒙版逐像素往返；当前选区改变后仍恢复原坐标，矩形外黑色",
+          "8位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0",
+          "16位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0",
+          "32位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0"
+        ],
+        "transparency": {
+          "status": "passed",
+          "task_id": null,
+          "output_id": null,
+          "placement": {
+            "left": 3,
+            "top": 2,
+            "width": 32,
+            "height": 8
+          },
+          "cases": [
+            {
+              "depth": 8,
+              "document_bits": "bitDepth8",
+              "color_profile": "sRGB IEC61966-2.1",
+              "alpha_mismatches": 0,
+              "rgb_mismatches": 0,
+              "capture_alpha_mismatches": 0,
+              "capture_rgb_mismatches": 0,
+              "max_alpha_difference": 0,
+              "max_color_difference": 0,
+              "samples": 256,
+              "read_components": 4,
+              "read_has_alpha": true,
+              "source_bounds": {
+                "left": 4,
+                "top": 2,
+                "right": 35,
+                "bottom": 10
+              },
+              "examples": []
+            },
+            {
+              "depth": 16,
+              "document_bits": "bitDepth16",
+              "color_profile": "sRGB IEC61966-2.1",
+              "alpha_mismatches": 0,
+              "rgb_mismatches": 0,
+              "capture_alpha_mismatches": 0,
+              "capture_rgb_mismatches": 0,
+              "max_alpha_difference": 0,
+              "max_color_difference": 0,
+              "samples": 256,
+              "read_components": 4,
+              "read_has_alpha": true,
+              "source_bounds": {
+                "left": 4,
+                "top": 2,
+                "right": 35,
+                "bottom": 10
+              },
+              "examples": []
+            },
+            {
+              "depth": 32,
+              "document_bits": "bitDepth32",
+              "color_profile": "sRGB IEC61966-2.1 (线性 RGB 配置文件)",
+              "alpha_mismatches": 0,
+              "rgb_mismatches": 0,
+              "capture_alpha_mismatches": 0,
+              "capture_rgb_mismatches": 0,
+              "max_alpha_difference": 0,
+              "max_color_difference": 0,
+              "samples": 256,
+              "read_components": 4,
+              "read_has_alpha": true,
+              "source_bounds": {
+                "left": 4,
+                "top": 2,
+                "right": 35,
+                "bottom": 10
+              },
+              "examples": []
+            }
+          ],
+          "steps": [
+            "8位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0",
+            "16位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0",
+            "32位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0"
+          ]
+        },
+        "bytes": 2508,
+        "width": 300,
+        "height": 200,
+        "firstPixel": [
+          40,
+          160,
+          140,
+          255
+        ]
+      },
+      "status": "passed"
+    },
+    "browser_lab_widths": [
+      320,
+      460,
+      900
+    ],
+    "browser_overflow": false,
+    "browser_page_errors": [],
+    "user_document_modified": false,
+    "user_selection_modified": false,
+    "cloud_generation_tested": false,
+    "details": "docs/photoshop-image-workflow-verification.md"
+  },
+  "snapshot_flat_layer_2026_10_09": {
+    "javascript_syntax": "passed",
+    "native_bridge_tests_passed": 11,
+    "python_tests_passed": 36,
+    "native_run": {
+      "at": "2026-10-09T14:25:16.463Z",
+      "native": true,
+      "viewport": {
+        "width": 1318,
+        "height": 1362
+      },
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Adobe UXP WebView",
+      "css": {
+        "grid": true,
+        "colorMix": true,
+        "clamp": true
+      },
+      "photoshop": "27.11.0",
+      "uxp": "uxp-9.4.1-0",
+      "pixelTest": {
+        "status": "passed",
+        "steps": [
+          "33x19 图层按自身边界导出、PNG/HTTP RGBA 像素往返",
+          "预览与提交复用同一图片文件，不重复传入 PNG 内容",
+          "工程历史改变后自动重新捕获，保留提交时快照",
+          "零输入原尺寸居中 (118,84) 64x32",
+          "直接创建顶层图层，名称使用提示词，不创建组",
+          "重复完成通知只创建一份图层",
+          "无选区保持 66x38，定位到输入 (13,17)",
+          "活动图层选区图像、LoadImageMask、零输入选区使用同一快照",
+          "128x64 拉伸至原 64x32，恢复 0/80/180/255 灰度，矩形外黑色",
+          "手动请求幂等，新点击可再次创建图层，自动记录保留",
+          "活动图层位于已有组内时，成片仍直接创建顶层图层，原组保持不变",
+          "377x611 灰度蒙版逐像素往返；当前选区改变后仍恢复原坐标，矩形外黑色",
+          "8位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0",
+          "16位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0",
+          "32位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0"
+        ],
+        "transparency": {
+          "status": "passed",
+          "task_id": null,
+          "output_id": null,
+          "placement": {
+            "left": 3,
+            "top": 2,
+            "width": 32,
+            "height": 8
+          },
+          "cases": [
+            {
+              "depth": 8,
+              "document_bits": "bitDepth8",
+              "color_profile": "sRGB IEC61966-2.1",
+              "alpha_mismatches": 0,
+              "rgb_mismatches": 0,
+              "capture_alpha_mismatches": 0,
+              "capture_rgb_mismatches": 0,
+              "max_alpha_difference": 0,
+              "max_color_difference": 0,
+              "samples": 256,
+              "read_components": 4,
+              "read_has_alpha": true,
+              "source_bounds": {
+                "left": 4,
+                "top": 2,
+                "right": 35,
+                "bottom": 10
+              },
+              "examples": []
+            },
+            {
+              "depth": 16,
+              "document_bits": "bitDepth16",
+              "color_profile": "sRGB IEC61966-2.1",
+              "alpha_mismatches": 0,
+              "rgb_mismatches": 0,
+              "capture_alpha_mismatches": 0,
+              "capture_rgb_mismatches": 0,
+              "max_alpha_difference": 0,
+              "max_color_difference": 0,
+              "samples": 256,
+              "read_components": 4,
+              "read_has_alpha": true,
+              "source_bounds": {
+                "left": 4,
+                "top": 2,
+                "right": 35,
+                "bottom": 10
+              },
+              "examples": []
+            },
+            {
+              "depth": 32,
+              "document_bits": "bitDepth32",
+              "color_profile": "sRGB IEC61966-2.1 (线性 RGB 配置文件)",
+              "alpha_mismatches": 0,
+              "rgb_mismatches": 0,
+              "capture_alpha_mismatches": 0,
+              "capture_rgb_mismatches": 0,
+              "max_alpha_difference": 0,
+              "max_color_difference": 0,
+              "samples": 256,
+              "read_components": 4,
+              "read_has_alpha": true,
+              "source_bounds": {
+                "left": 4,
+                "top": 2,
+                "right": 35,
+                "bottom": 10
+              },
+              "examples": []
+            }
+          ],
+          "steps": [
+            "8位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0",
+            "16位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0",
+            "32位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0"
+          ]
+        },
+        "bytes": 2508,
+        "width": 300,
+        "height": 200,
+        "firstPixel": [
+          40,
+          160,
+          140,
+          255
+        ]
+      },
+      "status": "passed"
+    },
+    "browser_checks": {
+      "widths": [
+        320,
+        460,
+        900
+      ],
+      "pages": [
+        "lab",
+        "submit"
+      ],
+      "horizontal_overflow": false,
+      "page_errors": [],
+      "browser_self_test_disabled": true,
+      "all_non_get_api_requests_intercepted": true,
+      "blocked_requests": [
+        "POST preview-file",
+        "POST preview-file",
+        "POST preview-file"
+      ]
+    },
+    "preview_png_reused": true,
+    "history_change_refreshes_capture": true,
+    "top_level_prompt_named_layers": true,
+    "existing_group_preserved": true,
+    "lost_acknowledgement_recovery_tested": true,
+    "user_document_modified": false,
+    "cloud_generation_tested": false,
+    "details": "docs/photoshop-image-workflow-verification.md"
+  },
+  "project_rename_2026_10_10": {
+    "at": "2026-10-09T18:54:55.893026+00:00",
+    "project_name": "rh-workflow-ps",
+    "root": "/Users/apple/Documents/github/rh-workflow-ps",
+    "migration": {
+      "data_files": 138,
+      "database_values": 150,
+      "venv_files": 15
+    },
+    "preserved_tasks": 19,
+    "preserved_media_sha256_checked": 284,
+    "sqlite_quick_check": "ok",
+    "stored_output_files_missing": 0,
+    "python_tests_passed": 36,
+    "native_bridge_tests_passed": 11,
+    "javascript_syntax": "passed",
+    "browser_checks": {
+      "widths": [
+        320,
+        460,
+        900
+      ],
+      "pages": [
+        "submit",
+        "workflows",
+        "outputs",
+        "lab"
+      ],
+      "brand": "RH Workflow PS",
+      "horizontal_overflow": false,
+      "page_errors": [],
+      "non_get_api_requests": "intercepted",
+      "browser_native_self_test_disabled": true
+    },
+    "native_run": {
+      "at": "2026-10-09T18:51:17.901Z",
+      "native": true,
+      "viewport": {
+        "width": 900,
+        "height": 880
+      },
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Adobe UXP WebView",
+      "css": {
+        "grid": true,
+        "colorMix": true,
+        "clamp": true
+      },
+      "photoshop": "27.11.0",
+      "uxp": "uxp-9.4.1-0",
+      "pixelTest": {
+        "status": "passed",
+        "steps": [
+          "33x19 图层按自身边界导出、PNG/HTTP RGBA 像素往返",
+          "预览与提交复用同一图片文件，不重复传入 PNG 内容",
+          "工程历史改变后自动重新捕获，保留提交时快照",
+          "零输入原尺寸居中 (118,84) 64x32",
+          "直接创建顶层图层，名称使用提示词，不创建组",
+          "重复完成通知只创建一份图层",
+          "无选区保持 66x38，定位到输入 (13,17)",
+          "活动图层选区图像、LoadImageMask、零输入选区使用同一快照",
+          "128x64 拉伸至原 64x32，恢复 0/80/180/255 灰度，矩形外黑色",
+          "手动请求幂等，新点击可再次创建图层，自动记录保留",
+          "活动图层位于已有组内时，成片仍直接创建顶层图层，原组保持不变",
+          "377x611 灰度蒙版逐像素往返；当前选区改变后仍恢复原坐标，矩形外黑色",
+          "8位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0",
+          "16位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0",
+          "32位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0"
+        ],
+        "transparency": {
+          "status": "passed",
+          "task_id": null,
+          "output_id": null,
+          "placement": {
+            "left": 3,
+            "top": 2,
+            "width": 32,
+            "height": 8
+          },
+          "cases": [
+            {
+              "depth": 8,
+              "document_bits": "bitDepth8",
+              "color_profile": "sRGB IEC61966-2.1",
+              "alpha_mismatches": 0,
+              "rgb_mismatches": 0,
+              "capture_alpha_mismatches": 0,
+              "capture_rgb_mismatches": 0,
+              "max_alpha_difference": 0,
+              "max_color_difference": 0,
+              "samples": 256,
+              "read_components": 4,
+              "read_has_alpha": true,
+              "source_bounds": {
+                "left": 4,
+                "top": 2,
+                "right": 35,
+                "bottom": 10
+              },
+              "examples": []
+            },
+            {
+              "depth": 16,
+              "document_bits": "bitDepth16",
+              "color_profile": "sRGB IEC61966-2.1",
+              "alpha_mismatches": 0,
+              "rgb_mismatches": 0,
+              "capture_alpha_mismatches": 0,
+              "capture_rgb_mismatches": 0,
+              "max_alpha_difference": 0,
+              "max_color_difference": 0,
+              "samples": 256,
+              "read_components": 4,
+              "read_has_alpha": true,
+              "source_bounds": {
+                "left": 4,
+                "top": 2,
+                "right": 35,
+                "bottom": 10
+              },
+              "examples": []
+            },
+            {
+              "depth": 32,
+              "document_bits": "bitDepth32",
+              "color_profile": "sRGB IEC61966-2.1 (线性 RGB 配置文件)",
+              "alpha_mismatches": 0,
+              "rgb_mismatches": 0,
+              "capture_alpha_mismatches": 0,
+              "capture_rgb_mismatches": 0,
+              "max_alpha_difference": 0,
+              "max_color_difference": 0,
+              "samples": 256,
+              "read_components": 4,
+              "read_has_alpha": true,
+              "source_bounds": {
+                "left": 4,
+                "top": 2,
+                "right": 35,
+                "bottom": 10
+              },
+              "examples": []
+            }
+          ],
+          "steps": [
+            "8位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0",
+            "16位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0",
+            "32位 RGBA 导入/捕获：透明度差异 0/0，颜色差异 0/0"
+          ]
+        },
+        "bytes": 2508,
+        "width": 300,
+        "height": 200,
+        "firstPixel": [
+          40,
+          160,
+          140,
+          255
+        ]
+      },
+      "status": "passed"
+    },
+    "plugin_registration": "new manifest loaded and Watching",
+    "native_menu_name": "RH Workflow PS",
+    "native_brand_visual": "not observed; desktop capture returned main document",
+    "cloud_generation_tested": false,
+    "details": "docs/project-rename-verification.md",
+    "sync_files_reproduced": 12
+  }
+}

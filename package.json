@@ -1,0 +1,13 @@
+{
+  "name": "rh-workflow-ps",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RH Workflow Desk UI inside a Photoshop UXP WebView",
+  "scripts": {
+    "start": "./scripts/start-server.sh",
+    "sync:ui": "python3 scripts/sync-desk-ui.py",
+    "check": "node scripts/check-js.cjs",
+    "test": "uv run --extra test python -m pytest -q tests",
+    "test:bridge": "node --test tests/host-bridge.test.cjs"
+  }
+}

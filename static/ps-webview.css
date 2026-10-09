@@ -1,0 +1,85 @@
+/* Browser CSS only. Desk tokens and public control sizes remain authoritative. */
+.focus-mode-link, .telegram-inbound-panel, .telegram-inbound-block, .telegram-inbound-row, .telegram-inbound-copy,
+[data-action="set-telegram-inbound"], [data-workflow-menu-action="set-telegram-inbound"],
+[data-workflow-folder-menu-action="set-telegram-inbound"],
+[data-folder-menu-action="set-telegram-inbound"],
+.prompt-group-library-panel, .prompt-group-library-section { display: none !important; }
+.ps-input-controls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) auto; align-items: end; gap: 10px; margin: 12px 0; }
+.ps-input-controls .field-group { min-width: 0; margin: 0; }
+.ps-input-controls [hidden] { display: none; }
+.ps-dialog { max-width: 560px; }
+.ps-document-label { color: var(--muted); overflow-wrap: anywhere; }
+.ps-dialog-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; gap: 12px; }
+.ps-runtime-label { color: var(--subtle); font-size: 10px; }
+.ps-lab-results { overflow: auto; max-height: 360px; margin-top: 20px; padding: 16px; border: 1px solid var(--line); border-radius: var(--small-radius); color: var(--muted); background: var(--surface-input); font: 11px/1.6 "SFMono-Regular", monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ps-lab .intro-block { margin-bottom: 24px; }
+.ps-lab .panel { margin-top: 16px; }
+.ps-lab-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.ps-lab-actions .primary-button { width: auto; }
+@media (max-width: 980px) {
+  .top-nav { position: sticky; top: 8px; z-index: 5; justify-content: center; margin-top: 14px; }
+}
+@media (max-width: 650px) {
+  .app-shell { width: calc(100% - 28px); min-width: 0; }
+  .topbar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+  .topbar-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-left: auto; }
+  .topbar-actions .local-badge { display: none; }
+  .brand-name { font-size: 13px; }
+  .brand-subtitle { font-size: 10px; }
+  .top-nav { display: flex; flex-wrap: wrap; width: 100%; margin-top: 14px; gap: 3px; }
+  .top-nav-link { flex: 1 0 auto; padding: 0 7px; font-size: 10px; }
+  .intro-block { margin: 24px 0; }
+  .intro-block h1 { font-size: clamp(25px, 7vw, 38px); }
+  .intro-block p { font-size: 12px; margin-top: 12px; }
+  .submit-workspace-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .submit-workspace-tab { padding: 9px; gap: 7px; }
+  .submit-workspace-tab-index { display: none; }
+  .ps-input-controls { grid-template-columns: 1fr; }
+  .ps-input-controls .ps-capture { justify-self: start; }
+  .output-rating-filters { min-width: 0; max-width: 100%; flex-wrap: wrap; }
+  .dialog-panel { max-height: calc(100dvh - 28px); overflow: auto; }
+}
+/* WKWebView's native select ignores min-height. Give it an explicit box. */
+body select:not([multiple]):not([size]) {
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  height: var(--control-height);
+  min-height: var(--control-height);
+  max-height: var(--control-height);
+  padding: 0 34px 0 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--small-radius);
+  background-color: var(--surface-input);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m2 2 4 4 4-4' fill='none' stroke='%23899bb8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  font-size: var(--control-font-size);
+  line-height: var(--control-line-height);
+}
+body select:disabled { opacity: .6; cursor: not-allowed; }
+.ps-input-controls { grid-template-columns: minmax(0, 1fr); }
+.file-input-card[data-ps-source] .file-input-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 38%); align-items: start; }
+.file-input-card[data-ps-source] .file-input-controls > .ps-input-controls { margin: 0 0 12px; }
+.ps-input-summary { color: var(--muted); font-size: 11px; line-height: 1.5; }
+.ps-input-summary.is-error, .ps-connection-warning { color: var(--danger); }
+.ps-input-actions, .ps-dialog-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.ps-dialog-actions { justify-content: flex-end; margin-top: 20px; }
+.ps-input-controls .field-label { margin-bottom: 6px; }
+.ps-input-controls .ps-connection-field { display: grid; gap: 8px; color: var(--subtle); font-size: 10px; overflow-wrap: anywhere; }
+.ps-placement { margin-top: 18px; padding: 16px; border: 1px solid var(--line); border-radius: var(--small-radius); background: var(--surface-input); }
+.ps-placement-summary, .ps-import-rule, .ps-import-status { margin: 8px 0 12px; color: var(--muted); font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; }
+.ps-geometry-confirm { display: flex; align-items: start; gap: 8px; margin: 12px 0; color: var(--warm); font-size: 11px; line-height: 1.6; }
+.ps-geometry-confirm input { width: 16px; height: 16px; min-height: 16px; flex: 0 0 16px; }
+.ps-dialog [hidden], .file-input-card [hidden] { display: none !important; }
+.file-input-card[data-ps-source="auto"] .file-meta,
+.file-input-card[data-ps-source="selection_mask"] .file-meta { display: none; }
+.ps-dialog .ps-import-submit { width: 100%; justify-content: center; }
+.ps-dialog .field-label { margin-bottom: 8px; }
+.ps-import-name { margin: 8px 0 20px; color: var(--ink); font-size: 12px; overflow-wrap: anywhere; }
+.ps-dialog-actions .primary-button { width: auto; }
+.artifact-card[data-ps-draggable="true"] { cursor: grab; }
+.artifact-card[data-ps-draggable="true"]:active { cursor: grabbing; }
+.artifact-card[hidden] { display: none !important; }
+.ps-drag-lab { margin: 18px 0; padding: 20px; }
+.ps-drag-lab p { margin: 12px 0; color: var(--muted); font-size: 12px; line-height: 1.6; }

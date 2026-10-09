@@ -1,0 +1,32 @@
+{
+  "source": "/Users/apple/Documents/github/rh-workflow-desk",
+  "commit": "1e3ed24e78a55e92c309931456a6a1be670ca171",
+  "files": {
+    "compare.html": "8d8ba20aa9b4eba4522fdf90ce1a77d28a2ff1e9de31d1b23cd1e9100f11b0b0",
+    "outputs.css": "805927febf264835e2dfa0b91cd3808bcb6a87880b4990e6e53f05909ea9d0d5",
+    "index.html": "b6f06851b3eda1437b8d91081e517c07bcce0d288fed291320fdcfb5bf540051",
+    "toolbox.html": "649ea1f5e1a91c919a55520134f7266948d01875b8bff4c722eb27235607ccb6",
+    "toolbox.css": "47e2c9d1ceeb2e40520583203c25105eea31a5faad0e01910a229844803f0e0d",
+    "workflows.css": "d2b79a3c24c6a99f41eebe3b9fbb3bbf278d764194ca515a76cd211d5e0f55e0",
+    "dashboard.css": "a570487ac289461a2ee33d54271fbfb4cf14b48f55b510433b2ffaf4af6a3b57",
+    "toolbox.js": "1455aeb4b6aae27d99c439c75fa14d5813dd81e4044999a7567e7958fa565822",
+    "app.css": "26328a0f7d03827f56bbdf27c3098843d772b6085fa8ee307ea3eef1d7e8cd33",
+    "settings.css": "a8624beb3ba98ebdc61218bc2d95bccbd72f4843d007d9f5e23feecc9d25ae79",
+    "dashboard.html": "ad7cf78d4bb39ce7559af09ca053ad6dbf758f202789557ca2064785c3ce02a3",
+    "outputs.html": "645a68522b292258d84ec3e821f7700e4f01075cdbdb6d969afb0d67af0b3d95",
+    "workflows.html": "0ca6c9ac99bda72e72ab458b425d389e819f71b423b050d12ac1786725faa834",
+    "outputs.js": "273cd0bda40a08dfaef4da34398f23b50e5c55d36c0458b1cf65ed7deb4a5557",
+    "compare.css": "d3e63cc8190073b9cd3a091ed29ba0182d67eaadd56963f6781f961bd310891f",
+    "compare.js": "3e7f836b0d9b687517d7b440e40024d84c514574a9e0f9efe4247ac46c6a06f6",
+    "motion.js": "5e92bdf359336534ff0b3afd9de728c71c60c2381620618170c0cbd1f8af38a9",
+    "dashboard.js": "eae4eef14508cf696fbdc062a47132895cacd764bd31a4940adf44fe5478178c",
+    "settings.html": "c220fb6641b9f55f26ea7ec7812eb1cc46bf11f57bb6596eb371e090d487a6d7",
+    "workflows.js": "d3f89ae3926c3dcfe864413ac754badff1ccb7aa9175c9e7ef0f5b1acd29049d",
+    "app.js": "374fbf133366f5fabdb346dd78e2d18fbf6671ef0afed84d0f2959b34980bc53",
+    "settings.js": "9175abb70852b4bb68c80a9a354d7671d0a007e22167659e81a5c82e63458a91",
+    "pricing.js": "ab937fc7a73ab64041c454a776819e7d815aedbf92697ec065e8d91eb5b2a45e",
+    "assets/rh-workflow-desk.ico": "5b225b3dcd544a6f207c77e5f468c6cd00a003b02c47c315a2435eb53d30c09b",
+    "assets/rh-workflow-desk.icns": "418227099a9e105b2d4b24688dfc155364d894670676a96662ae755fd5ae30f8",
+    "assets/rh-workflow-desk-icon.png": "b9179fe065ff41b0d84798db74eb5f88b64e7438f7396d629f2e9c66453e6ab3"
+  }
+}

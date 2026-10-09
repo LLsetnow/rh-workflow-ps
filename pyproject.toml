@@ -1,0 +1,20 @@
+[project]
+name = "rh-workflow-ps"
+version = "0.1.0"
+description = "Photoshop WebView panel using RH Workflow Desk UI and a native UXP bridge."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["rh-cli", "pillow>=10.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+rh-cli = { path = "cli", editable = true }
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "cli/tests"]
+pythonpath = [".", "cli/src"]

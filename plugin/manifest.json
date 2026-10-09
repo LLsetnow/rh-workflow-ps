@@ -1,0 +1,33 @@
+{
+  "manifestVersion": 5,
+  "id": "com.llsetnow.rhworkflowpswebview",
+  "name": "RH Workflow PS",
+  "version": "0.1.0",
+  "main": "index.html",
+  "host": {"app": "PS", "minVersion": "25.0.0", "apiVersion": 2},
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "rhWorkflowWebviewPanel",
+      "label": {"default": "RH Workflow PS"},
+      "minimumSize": {"width": 320, "height": 360},
+      "maximumSize": {"width": 2400, "height": 2000},
+      "preferredDockedSize": {"width": 400, "height": 760},
+      "preferredFloatingSize": {"width": 900, "height": 880},
+      "icons": [{"width": 23, "height": 23, "path": "icons/dark.png", "scale": [1,2], "theme": ["all"]}]
+    },
+    {"type": "command", "id": "openWebviewLab", "label": {"default": "WebView 本地自检"}},
+    {"type": "command", "id": "openWebviewDragLab", "label": {"default": "WebView 拖放验收"}}
+  ],
+  "requiredPermissions": {
+    "localFileSystem": "request",
+    "network": {"domains": ["http://localhost:8768", "http://127.0.0.1:8768"]},
+    "webview": {
+      "allow": "yes",
+      "domains": ["http://localhost:8768", "http://127.0.0.1:8768"],
+      "enableMessageBridge": "localAndRemote"
+    },
+    "launchProcess": {"schemes": ["http", "https"], "extensions": [".command"]}
+  },
+  "icons": [{"width": 48, "height": 48, "path": "icons/dark.png", "scale": [1,2], "theme": ["all"], "species": ["pluginList"]}]
+}
